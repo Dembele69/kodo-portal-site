@@ -195,7 +195,7 @@
               <p class="school-description">
                 三条西実隆を始祖とする、公家風の雅な礼法を重んじる流派です。和歌や古典文学との結びつきが深く、優美で典雅な所作が特徴です。
               </p>
-              <button class="learn-more">
+              <button class="learn-more" onclick="showSchoolDetail('oie')">
                 さらに詳しく
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
@@ -217,7 +217,7 @@
               <p class="school-description">
                 志野宗信を始祖とする、武家社会に広がった最大規模の流派です。精神性や厳格な作法を重視し、簡潔で力強い所作を特徴とします。
               </p>
-              <button class="learn-more">
+              <button class="learn-more" onclick="showSchoolDetail('shino')">
                 さらに詳しく
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
@@ -239,7 +239,7 @@
               <p class="school-description">
                 松平不昧公ゆかりの、茶の湯（不昧流）と深く結びついた流派です。「直心」の名の通り、飾り気のない純粋な心で香と向き合うことを旨としています。
               </p>
-              <button class="learn-more">
+              <button class="learn-more" onclick="showSchoolDetail('jikishin')">
                 さらに詳しく
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
@@ -306,7 +306,7 @@
             </div>
             <div class="event-action">
               <span class="event-price">3,500円</span>
-              <button class="event-button">詳細・予約</button>
+              <a href="https://kodo-bunka.jp/event/monkou-taiken" target="_blank" class="event-button">詳細・予約</a>
             </div>
           </div>
 
@@ -346,7 +346,7 @@
             </div>
             <div class="event-action">
               <span class="event-price">5,000円</span>
-              <button class="event-button">詳細・予約</button>
+              <a href="https://oieryu-kyoto.jp/courses/genji" target="_blank" class="event-button">詳細・予約</a>
             </div>
           </div>
 
@@ -386,7 +386,7 @@
             </div>
             <div class="event-action">
               <span class="event-price">4,000円</span>
-              <button class="event-button">詳細・予約</button>
+              <a href="https://matsue-culture.jp/jikishin-event" target="_blank" class="event-button">詳細・予約</a>
             </div>
           </div>
 
@@ -426,7 +426,7 @@
             </div>
             <div class="event-action">
               <span class="event-price">2,000円</span>
-              <button class="event-button">詳細・予約</button>
+              <a href="https://shinoryu-online.jp/weekend-lesson" target="_blank" class="event-button">詳細・予約</a>
             </div>
           </div>
         </div>
@@ -523,6 +523,20 @@
       &copy; 2024 香道の世界 ポータルサイト製作委員会. All rights reserved.
     </div>
   </footer>
+
+  <!-- モーダル: 流派詳細 -->
+  <div id="school-modal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeSchoolModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeSchoolModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
