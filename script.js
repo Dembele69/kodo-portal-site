@@ -197,6 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // デフォルトでホームタブを表示
   showTab('home');
   
+  // モーダルを確実に非表示にする
+  const modal = document.getElementById('school-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+  
   // モーダルのESCキーで閉じる機能
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
