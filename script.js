@@ -174,10 +174,8 @@ function filterEvents() {
 
 // フォーム送信処理
 function handleSubmit(event) {
-  event.preventDefault();
-  
+  // デフォルトのフォーム送信を許可（mailtoリンクで開く）
   const form = event.target;
-  const formData = new FormData(form);
   
   // フォームデータの取得
   const name = form.querySelector('input[type="text"]').value;
@@ -185,11 +183,11 @@ function handleSubmit(event) {
   const email = form.querySelector('input[type="email"]').value;
   const message = form.querySelector('textarea').value;
   
-  // 送信成功のメッセージ
-  alert(`お問い合わせありがとうございます！\n\nお名前: ${name}\nご興味のある流派: ${school}\nメールアドレス: ${email}\n\n内容を確認の上、ご連絡させていただきます。`);
+  // メールクライアントが開くことを通知
+  alert(`お問い合わせありがとうございます！\n\nメールクライアントが開きます。\n送信先: greatamil6@gmail.com\n\nお名前: ${name}\nご興味のある流派: ${school}\nメールアドレス: ${email}\n\nメールを送信してください。`);
   
-  // フォームをリセット
-  form.reset();
+  // mailtoリンクでメールクライアントを開く
+  return true;
 }
 
 // ページ読み込み時の初期化

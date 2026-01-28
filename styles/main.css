@@ -559,6 +559,36 @@ nav .max-w-7xl {
   border: 1px solid #f5f5f4;
 }
 
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f5f0;
+  border-radius: 0.5rem;
+}
+
+.email-icon {
+  width: 20px;
+  height: 20px;
+  color: #705e4a;
+}
+
+.contact-email a {
+  color: #705e4a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.contact-email a:hover {
+  color: #8b6f54;
+  text-decoration: underline;
+}
+
 .contact-form {
   margin-top: 1.5rem;
 }

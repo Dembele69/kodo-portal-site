@@ -625,9 +625,16 @@
         <div class="section-header">
           <h2 class="section-title">お問い合わせ</h2>
           <p class="section-subtitle">掲載依頼、または各流派への入門相談などもこちらで受け付けています。</p>
+          <p class="contact-email">
+            <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:greatamil6@gmail.com">greatamil6@gmail.com</a>
+          </p>
         </div>
         
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" action="mailto:greatamil6@gmail.com" method="post" enctype="text/plain" onsubmit="return handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">お名前</label>
