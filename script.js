@@ -174,7 +174,8 @@ function filterEvents() {
 
 // フォーム送信処理
 function handleSubmit(event) {
-  // デフォルトのフォーム送信を許可（mailtoリンクで開く）
+  event.preventDefault();
+  
   const form = event.target;
   
   // フォームデータの取得
@@ -183,11 +184,29 @@ function handleSubmit(event) {
   const email = form.querySelector('input[type="email"]').value;
   const message = form.querySelector('textarea').value;
   
-  // メールクライアントが開くことを通知
-  alert(`お問い合わせありがとうございます！\n\nメールクライアントが開きます。\n送信先: greatamil6@gmail.com\n\nお名前: ${name}\nご興味のある流派: ${school}\nメールアドレス: ${email}\n\nメールを送信してください。`);
+  // メールアドレスをBase64エンコードして隠す（難読化）
+  const encodedEmail = 'Z3JlYXRhbWlsNkBnbWFpbC5jb20=';
+  const recipientEmail = atob(encodedEmail);
   
-  // mailtoリンクでメールクライアントを開く
-  return true;
+  // メール本文を作成
+  const subject = encodeURIComponent('【香道の世界】お問い合わせ');
+  const body = encodeURIComponent(
+    `お名前: ${name}\n` +
+    `ご興味のある流派: ${school}\n` +
+    `メールアドレス: ${email}\n\n` +
+    `お問い合わせ内容:\n${message}`
+  );
+  
+  // mailtoリンクを生成して開く
+  window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+  
+  // 送信完了メッセージ
+  setTimeout(() => {
+    alert('お問い合わせありがとうございます！\n\nメールクライアントが開きました。\nメールを送信してください。');
+    form.reset();
+  }, 500);
+  
+  return false;
 }
 
 // ページ読み込み時の初期化
