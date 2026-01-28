@@ -1,0 +1,12 @@
+document.getElementById('search').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const events = document.querySelectorAll('#event-list li');
+
+  events.forEach(event => {
+    if (event.textContent.toLowerCase().includes(query)) {
+      event.style.display = '';
+    } else {
+      event.style.display = 'none';
+    }
+  });
+});
