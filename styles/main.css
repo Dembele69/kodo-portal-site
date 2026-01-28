@@ -898,6 +898,229 @@ textarea.form-input {
   font-size: 1.2rem;
 }
 
+/* 香道とはページ */
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f5f5f4;
+}
+
+.about-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1c1917;
+  margin-bottom: 1.5rem;
+  font-family: serif;
+}
+
+.about-text {
+  color: #57534e;
+  line-height: 1.9;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1c1917;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: serif;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.about-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #8b6f54;
+}
+
+/* タイムライン */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #e7e5e4, #8b6f54, #e7e5e4);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+  order: 2;
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  order: 1;
+  text-align: right;
+}
+
+.timeline-marker {
+  font-weight: bold;
+  color: #705e4a;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background: #f8f5f0;
+  border-radius: 0.5rem;
+  text-align: right;
+  position: relative;
+  font-family: serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 2px solid #8b6f54;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -1.5rem;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: #8b6f54;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #8b6f54;
+}
+
+.timeline-item:nth-child(even) .timeline-marker::after {
+  right: auto;
+  left: -1.5rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f5f5f4;
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1c1917;
+  margin-bottom: 0.75rem;
+  font-family: serif;
+}
+
+.timeline-text {
+  color: #57534e;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* 特徴カード（香道とはページ用） */
+.about-feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f5f5f4;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.about-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-feature-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1c1917;
+  margin-bottom: 0.75rem;
+  font-family: serif;
+}
+
+.about-feature-text {
+  color: #57534e;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+/* 六国五味 */
+.rikkoku-gomi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.rikkoku-section {
+  background: #f8f5f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.rikkoku-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #705e4a;
+  margin-bottom: 1rem;
+  font-family: serif;
+}
+
+.rikkoku-list {
+  list-style: none;
+  padding: 0;
+}
+
+.rikkoku-list li {
+  padding: 0.75rem 0;
+  color: #57534e;
+  line-height: 1.7;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.rikkoku-list li:last-child {
+  border-bottom: none;
+}
+
+.modern-kodo {
+  background: linear-gradient(135deg, #f8f5f0 0%, #ffffff 100%);
+  border-left: 4px solid #8b6f54;
+}
+
 /* レスポンシブ */
 @media (max-width: 768px) {
   .md-flex {
@@ -938,6 +1161,48 @@ textarea.form-input {
   }
   
   .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 香道とはページのタイムラインをモバイル対応 */
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-left: 60px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-marker {
+    order: 1;
+    text-align: left;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    order: 2;
+    text-align: left;
+  }
+  
+  .timeline-marker {
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .timeline-marker::after {
+    right: auto;
+    left: -2.5rem;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-marker::after {
+    left: -2.5rem;
+  }
+  
+  .rikkoku-gomi {
     grid-template-columns: 1fr;
   }
 }

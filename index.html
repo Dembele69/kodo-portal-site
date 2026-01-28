@@ -28,6 +28,13 @@
           </svg>
           <span>ホーム</span>
         </button>
+        <button class="nav-item" data-tab="about" onclick="showTab('about')">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>香道とは</span>
+        </button>
         <button class="nav-item" data-tab="schools" onclick="showTab('schools')">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -78,6 +85,13 @@
           <line x1="12" y1="8" x2="12.01" y2="8"></line>
         </svg>
         <span>ホーム</span>
+      </button>
+      <button class="nav-item-mobile" data-tab="about" onclick="showTab('about')">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>香道とは</span>
       </button>
       <button class="nav-item-mobile" data-tab="schools" onclick="showTab('schools')">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -170,6 +184,174 @@
             </p>
           </div>
         </section>
+      </div>
+    </div>
+
+    <!-- 香道とはセクション -->
+    <div id="tab-about" class="tab-content hidden">
+      <div class="space-y-8">
+        <div class="section-header">
+          <h2 class="section-title">香道とは</h2>
+          <p class="section-subtitle">日本の三大芸道の一つ、香道の歴史と文化をご紹介します。</p>
+        </div>
+
+        <!-- 香道の概要 -->
+        <div class="about-section">
+          <div class="about-card">
+            <h3 class="about-heading">香道の定義</h3>
+            <p class="about-text">
+              香道（こうどう）は、香木を焚いてその香りを鑑賞する日本の伝統芸術です。茶道、華道と並ぶ日本の三大芸道の一つとして、室町時代から現代まで受け継がれてきました。単に香りを楽しむだけでなく、香りを「聞く」という独特の表現を用い、精神的な修養と美的感性を磨く総合芸術として発展しました。
+            </p>
+          </div>
+        </div>
+
+        <!-- 歴史タイムライン -->
+        <div class="about-section">
+          <h3 class="about-section-title">香道の歴史</h3>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">飛鳥時代<br>（6世紀末）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">香木の伝来</h4>
+                <p class="timeline-text">
+                  『日本書紀』によれば、推古天皇3年（595年）に淡路島に香木が漂着したのが日本における香の始まりとされています。仏教の伝来とともに、仏前で香を焚く習慣が広まりました。
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">平安時代<br>（794-1185）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">貴族文化としての香</h4>
+                <p class="timeline-text">
+                  平安貴族の間で「薫物（たきもの）」と呼ばれる調合香が流行しました。『源氏物語』の「梅枝」の巻には香の調合の記述があり、貴族たちが競って香を調合し、衣服や部屋に焚き染めていた様子が描かれています。この時代、香は単なる芳香剤ではなく、教養と美意識を示すものでした。
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">鎌倉時代<br>（1185-1333）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">武家社会への浸透</h4>
+                <p class="timeline-text">
+                  武家社会においても香は重要視され、武士たちは甲冑に香を焚き染める「甲香」の習慣を持っていました。禅宗の影響を受け、香は精神修養の道具としても用いられるようになります。
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">室町時代<br>（1336-1573）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">香道の確立</h4>
+                <p class="timeline-text">
+                  8代将軍・足利義政の時代に、香道は独立した芸道として確立されました。三条西実隆による御家流、志野宗信による志野流が成立し、「組香」という香りを当てる遊びが体系化されました。茶道、華道、連歌などと並んで東山文化を代表する芸道となります。
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">江戸時代<br>（1603-1868）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">大衆化と発展</h4>
+                <p class="timeline-text">
+                  武家社会の安定により、香道は武士や町人の間にも広がりました。様々な組香が考案され、源氏物語などの古典文学をテーマにした風雅な遊びとして楽しまれました。松平不昧公による直心流も、この時代に茶道との融合を図って成立しました。
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">明治時代以降<br>（1868-現代）</div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">伝統の継承と現代への展開</h4>
+                <p class="timeline-text">
+                  明治維新後、一時衰退の危機を迎えましたが、各流派の家元や愛好家たちの努力により伝統が守られました。現代では、日本文化への関心の高まりとともに、若い世代にも香道の魅力が見直されています。海外でも「KODO」として紹介され、日本の精神文化を代表する芸術として注目を集めています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 香道の特徴 -->
+        <div class="about-section">
+          <h3 class="about-section-title">香道の特徴</h3>
+          <div class="features-grid">
+            <div class="about-feature-card">
+              <div class="about-feature-icon">👃</div>
+              <h4 class="about-feature-title">香を「聞く」</h4>
+              <p class="about-feature-text">
+                香道では香りを「嗅ぐ」のではなく「聞く」と表現します。これは、香りに心を傾け、静かに向き合う精神的な姿勢を表しています。
+              </p>
+            </div>
+            <div class="about-feature-card">
+              <div class="about-feature-icon">🎋</div>
+              <h4 class="about-feature-title">組香の芸術性</h4>
+              <p class="about-feature-text">
+                複数の香木を用いて香りを当てる「組香」は、古典文学や和歌をテーマにした知的で優雅な遊びです。季節感や物語性を香りで表現します。
+              </p>
+            </div>
+            <div class="about-feature-card">
+              <div class="about-feature-icon">🧘</div>
+              <h4 class="about-feature-title">精神修養</h4>
+              <p class="about-feature-text">
+                香道は単なる娯楽ではなく、心を落ち着け、精神を集中させる修行の場でもあります。禅の思想とも深く結びついています。
+              </p>
+            </div>
+            <div class="about-feature-card">
+              <div class="about-feature-icon">📜</div>
+              <h4 class="about-feature-title">厳格な作法</h4>
+              <p class="about-feature-text">
+                香炉の扱い方、香を聞く姿勢、道具の配置など、細やかな作法が定められています。これらは流派によって異なる特色を持ちます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 六国五味 -->
+        <div class="about-section">
+          <h3 class="about-section-title">六国五味（りっこくごみ）</h3>
+          <div class="about-card">
+            <p class="about-text" style="margin-bottom: 1.5rem;">
+              香道では、香木を産地によって「六国」、香りの種類によって「五味」に分類します。これは香道の基本的な知識体系です。
+            </p>
+            <div class="rikkoku-gomi">
+              <div class="rikkoku-section">
+                <h4 class="rikkoku-title">六国（産地）</h4>
+                <ul class="rikkoku-list">
+                  <li><strong>伽羅（きゃら）</strong> - 最高級の香木、ベトナム産</li>
+                  <li><strong>羅国（らこく）</strong> - タイ産</li>
+                  <li><strong>真那賀（まなか）</strong> - マラッカ産</li>
+                  <li><strong>真南蛮（まなばん）</strong> - 南インド産</li>
+                  <li><strong>佐曽羅（さそら）</strong> - インド産</li>
+                  <li><strong>寸聞多羅（すもたら）</strong> - スマトラ産</li>
+                </ul>
+              </div>
+              <div class="rikkoku-section">
+                <h4 class="rikkoku-title">五味（香りの種類）</h4>
+                <ul class="rikkoku-list">
+                  <li><strong>甘（かん）</strong> - 甘い香り</li>
+                  <li><strong>酸（さん）</strong> - 酸っぱい香り</li>
+                  <li><strong>辛（しん）</strong> - 辛い香り</li>
+                  <li><strong>鹹（かん）</strong> - 塩辛い香り</li>
+                  <li><strong>苦（く）</strong> - 苦い香り</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 現代の香道 -->
+        <div class="about-section">
+          <div class="about-card modern-kodo">
+            <h3 class="about-heading">現代における香道</h3>
+            <p class="about-text">
+              現代の香道は、伝統を守りながらも新しい時代に適応しています。オンラインでの講座、若い世代向けのカジュアルな体験会、海外への普及活動など、様々な取り組みが行われています。ストレス社会において、香道が提供する静寂と集中の時間は、現代人にとって貴重な心の拠り所となっています。
+            </p>
+            <p class="about-text">
+              また、アロマセラピーやマインドフルネスとの親和性も注目され、日本の伝統文化でありながら、普遍的な価値を持つ芸術として再評価されています。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
