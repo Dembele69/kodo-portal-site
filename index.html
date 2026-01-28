@@ -1,23 +1,529 @@
-<section id="kodo-world">
-  <h2>香道の世界</h2>
-  <div class="intro">
-    <p>
-      香道は、日本の三大芸道の一つで、香りを通じて心を落ち着け、精神を統一する雅やかな芸術です。平安時代に始まり、室町時代に洗練されました。
-    </p>
-    <p>
-      聞香（もんこう）や組香（くみこう）など、香りを楽しむ儀式やゲームを通じて、自然や季節、物語に思いを馳せます。
-    </p>
-  </div>
-  <div class="features">
-    <h3>魅力的な香道の特徴</h3>
-    <ul>
-      <li><strong>静寂と集中:</strong> 香りを通じて心を落ち着ける時間。</li>
-      <li><strong>美���識:</strong> 香木や香炉、道具にも細やかな美しさ。</li>
-      <li><strong>歴史的背景:</strong> 日本文化の中で育まれた伝統。</li>
-    </ul>
-  </div>
-  <div class="call-to-action">
-    <p>香道の魅力を体感してみませんか？初心者向けの講座情報をチェックして、香りの世界に一歩を踏み出しましょう。</p>
-    <a class="btn" href="#events">体験講座を見る</a>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>香道の世界 - 日本の伝統芸術</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="min-h-screen bg-stone-50 text-stone-900">
+  
+  <!-- ナビゲーション -->
+  <nav class="sticky top-0 z-50 bg-white-blur backdrop-blur border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-2 cursor-pointer" onclick="showTab('home')">
+        <div class="logo-circle">
+          <span class="text-white font-bold">香</span>
+        </div>
+        <span class="text-xl font-bold tracking-widest">香道の世界</span>
+      </div>
+
+      <!-- デスクトップナビゲーション -->
+      <div class="hidden md-flex space-x-2">
+        <button class="nav-item" data-tab="home" onclick="showTab('home')">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>ホーム</span>
+        </button>
+        <button class="nav-item" data-tab="schools" onclick="showTab('schools')">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>流派紹介</span>
+        </button>
+        <button class="nav-item" data-tab="events" onclick="showTab('events')">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>体験・講座</span>
+        </button>
+        <button class="nav-item" data-tab="contact" onclick="showTab('contact')">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>お問い合わせ</span>
+        </button>
+      </div>
+
+      <!-- モバイルメニュートグル -->
+      <button class="md-hidden menu-toggle" onclick="toggleMenu()">
+        <svg class="menu-icon" id="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="menu-icon hidden" id="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu hidden" id="mobile-menu">
+      <button class="nav-item-mobile" data-tab="home" onclick="showTab('home')">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>ホーム</span>
+      </button>
+      <button class="nav-item-mobile" data-tab="schools" onclick="showTab('schools')">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>流派紹介</span>
+      </button>
+      <button class="nav-item-mobile" data-tab="events" onclick="showTab('events')">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>体験・講座</span>
+      </button>
+      <button class="nav-item-mobile" data-tab="contact" onclick="showTab('contact')">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>お問い合わせ</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- ホームセクション -->
+    <div id="tab-home" class="tab-content">
+      <div class="space-y-12">
+        <!-- ヒーローセクション -->
+        <section class="hero-section">
+          <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1200" 
+               class="hero-image" alt="香道の世界">
+          <div class="hero-content">
+            <h1 class="hero-title">香、聞く時間。</h1>
+            <p class="hero-subtitle">
+              一炷（いっしゅ）の香に心を傾け、平安の雅、武家の精神、そして茶の湯の心に触れる。
+            </p>
+            <div class="hero-buttons">
+              <button class="btn-primary" onclick="showTab('events')">体験会を探す</button>
+              <button class="btn-secondary" onclick="showTab('schools')">流派を知る</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 特徴カード -->
+        <section class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">三代芸道の誇り</h3>
+            <p class="feature-text">
+              茶道、華道、そして香道。室町時代から受け継がれる香道は、文学、歴史、精神修行が凝縮された総合芸術です。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">「聞く」という体験</h3>
+            <p class="feature-text">
+              香道では香を「嗅ぐ」のではなく「聞く」と表現します。目に見えない香りを心の耳で感じ、静寂を楽しみます。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">四季折々の組香</h3>
+            <p class="feature-text">
+              「源氏香」など、香りを当て分ける知的な遊び。季節の情緒を感じながら、古典の世界を旅します。
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- 流派セクション -->
+    <div id="tab-schools" class="tab-content hidden">
+      <div class="space-y-8">
+        <div class="section-header">
+          <h2 class="section-title">主要な流派</h2>
+          <p class="section-subtitle">日本が誇る三大流派をご紹介します。それぞれの歴史的背景によって、作法や雰囲気が異なります。</p>
+        </div>
+        
+        <div class="schools-grid">
+          <div class="school-card">
+            <div class="school-image-container">
+              <img src="https://images.unsplash.com/photo-1599307767316-776533bb941c?auto=format&fit=crop&q=80&w=800" 
+                   alt="御家流" class="school-image">
+              <div class="school-tag">
+                <span>公家流</span>
+              </div>
+            </div>
+            <div class="school-content">
+              <h3 class="school-title">御家流 (Oie-ryu)</h3>
+              <p class="school-description">
+                三条西実隆を始祖とする、公家風の雅な礼法を重んじる流派です。和歌や古典文学との結びつきが深く、優美で典雅な所作が特徴です。
+              </p>
+              <button class="learn-more">
+                さらに詳しく
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="school-card">
+            <div class="school-image-container">
+              <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&q=80&w=800" 
+                   alt="志野流" class="school-image">
+              <div class="school-tag">
+                <span>武家流</span>
+              </div>
+            </div>
+            <div class="school-content">
+              <h3 class="school-title">志野流 (Shino-ryu)</h3>
+              <p class="school-description">
+                志野宗信を始祖とする、武家社会に広がった最大規模の流派です。精神性や厳格な作法を重視し、簡潔で力強い所作を特徴とします。
+              </p>
+              <button class="learn-more">
+                さらに詳しく
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="school-card">
+            <div class="school-image-container">
+              <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?auto=format&fit=crop&q=80&w=800" 
+                   alt="直心流" class="school-image">
+              <div class="school-tag">
+                <span>茶人流</span>
+              </div>
+            </div>
+            <div class="school-content">
+              <h3 class="school-title">直心流 (Jikishin-ryu)</h3>
+              <p class="school-description">
+                松平不昧公ゆかりの、茶の湯（不昧流）と深く結びついた流派です。「直心」の名の通り、飾り気のない純粋な心で香と向き合うことを旨としています。
+              </p>
+              <button class="learn-more">
+                さらに詳しく
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 体験・講座セクション -->
+    <div id="tab-events" class="tab-content hidden">
+      <div class="space-y-8">
+        <div class="events-header">
+          <div class="space-y-2">
+            <h2 class="section-title">体験・講座情報</h2>
+            <p class="section-subtitle">流派ごとの体験会や、カルチャーセンターの講座をご案内します。</p>
+          </div>
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" id="search-input" placeholder="場所、講座名、流派で検索..." 
+                   class="search-input" oninput="filterEvents()">
+          </div>
+        </div>
+
+        <div class="events-list" id="events-list">
+          <div class="event-item" data-search="初心者向け「聞香」体験会 東京都 中央区 香道文化保存会 体験">
+            <div class="event-content">
+              <div class="event-header">
+                <span class="event-badge event-badge-experience">体験</span>
+                <h4 class="event-title">初心者向け「聞香」体験会</h4>
+              </div>
+              <div class="event-details">
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  東京都 中央区
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  2024-05-15
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  香道文化保存会
+                </div>
+              </div>
+            </div>
+            <div class="event-action">
+              <span class="event-price">3,500円</span>
+              <button class="event-button">詳細・予約</button>
+            </div>
+          </div>
+
+          <div class="event-item" data-search="源氏物語と組香の基礎講座 京都府 京都市 御家流 京都教場 講座">
+            <div class="event-content">
+              <div class="event-header">
+                <span class="event-badge event-badge-course">講座</span>
+                <h4 class="event-title">源氏物語と組香の基礎講座</h4>
+              </div>
+              <div class="event-details">
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  京都府 京都市
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  2024-06-01
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  御家流 京都教場
+                </div>
+              </div>
+            </div>
+            <div class="event-action">
+              <span class="event-price">5,000円</span>
+              <button class="event-button">詳細・予約</button>
+            </div>
+          </div>
+
+          <div class="event-item" data-search="不昧公ゆかりの直心流聞香会 島根県 松江市 松江文化センター 体験">
+            <div class="event-content">
+              <div class="event-header">
+                <span class="event-badge event-badge-experience">体験</span>
+                <h4 class="event-title">不昧公ゆかりの直心流聞香会</h4>
+              </div>
+              <div class="event-details">
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  島根県 松江市
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  2024-06-15
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  松江文化センター
+                </div>
+              </div>
+            </div>
+            <div class="event-action">
+              <span class="event-price">4,000円</span>
+              <button class="event-button">詳細・予約</button>
+            </div>
+          </div>
+
+          <div class="event-item" data-search="週末の香道入門レッスン オンライン 志野流 ネット支部 講座">
+            <div class="event-content">
+              <div class="event-header">
+                <span class="event-badge event-badge-course">講座</span>
+                <h4 class="event-title">週末の香道入門レッスン</h4>
+              </div>
+              <div class="event-details">
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  オンライン
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  毎週土曜日
+                </div>
+                <div class="event-detail">
+                  <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  志野流 ネット支部
+                </div>
+              </div>
+            </div>
+            <div class="event-action">
+              <span class="event-price">2,000円</span>
+              <button class="event-button">詳細・予約</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="no-results" class="no-results hidden">
+          条件に合う情報は見つかりませんでした。
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせセクション -->
+    <div id="tab-contact" class="tab-content hidden">
+      <div class="contact-container">
+        <div class="section-header">
+          <h2 class="section-title">お問い合わせ</h2>
+          <p class="section-subtitle">掲載依頼、または各流派への入門相談などもこちらで受け付けています。</p>
+        </div>
+        
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">お名前</label>
+              <input type="text" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ご興味のある流派</label>
+              <select class="form-input">
+                <option>未定</option>
+                <option>御家流</option>
+                <option>志野流</option>
+                <option>直心流</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス</label>
+            <input type="email" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容</label>
+            <textarea rows="4" class="form-input" placeholder="掲載のご依頼や、講座への質問をご記入ください" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">メッセージを送信</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <div class="footer-logo-circle">
+            <span>香</span>
+          </div>
+          <span class="footer-logo-text">香道の世界</span>
+        </div>
+        <p class="footer-description">
+          三条西家、志野家、そして不昧公へと連なる日本の香文化。その深淵な魅力を現代に伝えるための情報をお届けします。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">コンテンツ</h4>
+        <ul class="footer-links">
+          <li><button onclick="showTab('home')">香道とは</button></li>
+          <li><button onclick="showTab('schools')">流派の紹介</button></li>
+          <li><button onclick="showTab('events')">体験・講座を探す</button></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">リンク集</h4>
+        <ul class="footer-links">
+          <li><a href="#">三条西家（御家流）公式</a></li>
+          <li><a href="#">志野流香道公式</a></li>
+          <li><a href="#">直心流香道保存会</a></li>
+          <li><a href="#">不昧流茶道保存会</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">フォロー</h4>
+        <div class="social-links">
+          <div class="social-icon">X</div>
+          <div class="social-icon">IG</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      &copy; 2024 香道の世界 ポータルサイト製作委員会. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
